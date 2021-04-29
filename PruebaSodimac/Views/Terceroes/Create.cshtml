@@ -1,0 +1,78 @@
+﻿@model PruebaSodimac.Models.Tercero
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tercero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Primernombre" class="control-label"></label>
+                <input asp-for="Primernombre" class="form-control" />
+                <span asp-validation-for="Primernombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Segundonombre" class="control-label"></label>
+                <input asp-for="Segundonombre" class="form-control" />
+                <span asp-validation-for="Segundonombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Primerapellido" class="control-label"></label>
+                <input asp-for="Primerapellido" class="form-control" />
+                <span asp-validation-for="Primerapellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Segundoapellido" class="control-label"></label>
+                <input asp-for="Segundoapellido" class="form-control" />
+                <span asp-validation-for="Segundoapellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipodocumento" class="control-label"></label>
+                <input asp-for="Tipodocumento" class="form-control" />
+                <span asp-validation-for="Tipodocumento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Documento" class="control-label"></label>
+                <input asp-for="Documento" class="form-control" />
+                <span asp-validation-for="Documento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correoelectronico" class="control-label"></label>
+                <input asp-for="Correoelectronico" class="form-control" />
+                <span asp-validation-for="Correoelectronico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

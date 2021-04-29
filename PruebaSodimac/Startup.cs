@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PruebaSodimac.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace PruebaSodimac
 {
@@ -24,6 +26,8 @@ namespace PruebaSodimac
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            var connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ModelContext>(options => options.UseOracle(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

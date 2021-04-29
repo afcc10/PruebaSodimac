@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PruebaSodimac.Models.Movimientofactura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totaldescuento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totalimpuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valorbruto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valortotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoditemNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RowidfacturaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totaldescuento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totalimpuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valorbruto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valortotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoditemNavigation.IdRepuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowidfacturaNavigation.RowidFactura)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Rowidmovimientofactura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Rowidmovimientofactura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Rowidmovimientofactura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

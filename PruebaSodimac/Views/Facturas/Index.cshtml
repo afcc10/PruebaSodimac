@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PruebaSodimac.Models.Factura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipodocumento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consecutivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentoclienteNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentomecanicoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipodocumento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Consecutivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentoclienteNavigation.Documento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentomecanicoNavigation.Documento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RowidFactura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RowidFactura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RowidFactura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

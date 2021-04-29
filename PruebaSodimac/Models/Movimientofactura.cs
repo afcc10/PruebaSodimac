@@ -20,6 +20,7 @@ namespace PruebaSodimac.Models
         public decimal? Totalimpuesto { get; set; }
         public decimal? Valorbruto { get; set; }
         public string Valortotal { get; set; }
+        public DateTime FechaVenta { get; set; }
 
         public virtual Item CoditemNavigation { get; set; }
         public virtual Factura RowidfacturaNavigation { get; set; }
